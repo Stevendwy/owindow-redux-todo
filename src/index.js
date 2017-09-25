@@ -6,8 +6,11 @@ import App from './containers/App';
 import reducer from './reducers';
 import 'todomvc-app-css/index.css'
 
+const store = createStore(reducer)
 
-ReactDOM.render(
-	<App />, 
-	document.getElementById('root')
-);
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
